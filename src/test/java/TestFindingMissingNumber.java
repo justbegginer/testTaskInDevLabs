@@ -18,21 +18,21 @@ public class TestFindingMissingNumber {
     @ParameterizedTest
     @MethodSource("provideIncorrectArraysForMissingNumber")
     void findMissingNumberWithEmptyArray(int[] input, String expectedMessage) {
-        assertThrows(IllegalArgumentException.class, ()-> Main.findMissingNumber(input), expectedMessage);
+        assertThrows(IllegalArgumentException.class, () -> Main.findMissingNumber(input), expectedMessage);
     }
 
     private static Stream<Arguments> provideArraysForMissingNumber() {
         return Stream.of(
-                Arguments.of(new int[] {5, 0, 1, 3, 2}, 4),
-                Arguments.of(new int[] {7, 9, 10, 11, 12}, 8),
-                Arguments.of(new int[] {0, 1, 3}, 2)
+                Arguments.of(new int[]{5, 0, 1, 3, 2}, 4),
+                Arguments.of(new int[]{7, 9, 10, 11, 12}, 8),
+                Arguments.of(new int[]{0, 1, 3}, 2)
         );
     }
 
     private static Stream<Arguments> provideIncorrectArraysForMissingNumber() {
         return Stream.of(
-                Arguments.of(new int[] {}, "Input array is empty."),
-                Arguments.of(new int[] {1}, "There is only one number. It is impossible to determine the missing number.")
+                Arguments.of(new int[]{}, "Input array is empty."),
+                Arguments.of(new int[]{1}, "There is only one number. It is impossible to determine the missing number.")
         );
     }
 }
